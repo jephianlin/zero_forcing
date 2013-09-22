@@ -1,0 +1,7 @@
+In order to access the functions in the psd_prop_time_interval.py file in SAGE without 
+copying and pasting the entire contents of the raw code into SAGE and evaluating you
+can simply evaluate:
+
+load('https://raw.github.com/warnberg/zero\_forcing/master/psd\_prop\_time\_interval.py') 
+
+in a SAGE cell and you will have access to the functions described therein.
