@@ -1,5 +1,6 @@
 #This is a library of the 238 directed graphs on 1-4 vertices where they are ordered according to: R. C. Read and R. J. Wilson. An Atlas of Graphs. Oxford University Press, Oxford, 1998.
 
+
 D = []
 D.append('no graph')
 D.append(DiGraph({0:[]}))#D1
