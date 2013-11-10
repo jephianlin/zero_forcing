@@ -1,6 +1,4 @@
-In order to access the functions in the psd_prop_time_interval.py file in SAGE without 
-copying and pasting the entire contents of the raw code into SAGE and evaluating you
-can simply evaluate:
+In order to access the functions in the psd_prop_time_interval.py file in SAGE without copying and pasting the entire contents of the raw code into SAGE and evaluating youcan simply evaluate:
 
 load('https://raw.github.com/warnberg/zero_forcing/master/psd_prop_time_interval.py') 
 
@@ -8,14 +6,10 @@ in a SAGE cell and you will have access to the functions described therein.
 
 
 
-In order to access the functions for directed graphs without 
-copying and pasting the entire contents of the raw code into SAGE and evaluating you
-can simply evaluate:
+In order to access the functions for directed graphs without copying and pasting the entire contents of the raw code into SAGE and evaluating you can simply evaluate:
 files = ('directed_prop_time.py', 'directed_atlas.py', 'directed_min_rank_bounds.py', 'digraphs5_verts.py', 'orientations.py')
 
 for f in files:
   load('https://raw.github.com/warnberg/zero_forcing/master/' + f) 
 
-in a SAGE cell and you will have access to the functions described therein. Note to access 
-directed graphs up to 4 vertices use the list directed_atlas, to access the directed 
-graphs on 5 vertices use the list di_graphs_5.
+in a SAGE cell and you will have access to the functions described therein. Note to access directed graphs up to 4 vertices use the list directed_atlas, to access the directed graphs on 5 vertices use the list di_graphs_5.
