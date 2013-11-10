@@ -11,7 +11,7 @@ in a SAGE cell and you will have access to the functions described therein.
 In order to access the functions for directed graphs without 
 copying and pasting the entire contents of the raw code into SAGE and evaluating you
 can simply evaluate:
-files = ('directed_prop_time.py', 'directed_atlas.py', 'directed_min_rank_bounds.py', 'digraphs5_verts.py')
+files = ('directed_prop_time.py', 'directed_atlas.py', 'directed_min_rank_bounds.py', 'digraphs5_verts.py', 'orientations.py')
 
 for f in files:
   load('https://raw.github.com/warnberg/zero_forcing/master/' + f) 
