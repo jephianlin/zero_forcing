@@ -159,10 +159,7 @@ def di_Z(G):
         for w in combinations(H.vertices(),i):
             indicator = is_di_zero_forcing(H,w)
             if indicator > -1:
-                z = []
-                z.append(i)
-                z.append(w)
-                return z
+                return i
         i+=1
 
 
@@ -187,7 +184,7 @@ def di_zero_forcing_sets_min(G):
     #This generates the directed zero forcing number of G
     H = G.copy()
     H.relabel()
-    z = di_Z(H)[0]
+    z = di_Z(H)
     sets = []
     #Uncomment the next line in if you would like to see what the
     #relabelled graph looks like
