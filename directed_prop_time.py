@@ -140,17 +140,15 @@ def di_Z(G):
         of the smallest directed zero forcing set.
         
         INPUT:
-        A graph G
+        A directed graph G.
         
         OUTPUT:
-        A list whose first element is the directed zero forcing
-        number and whose second element is a minimum directed
-        zero forcing set.
+        The directed zero forcing number. 
         
-        EXAMPLES:
+        EXAMPLE:
         sage: G = DiGraph({0:{1,2,3}, 2:{4,5}, 4:{2}})
         sage: di_Z(G)
-        (3,[0,1,4])
+        3
         """
     H = G.copy()
     H.relabel()
