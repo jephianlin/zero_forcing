@@ -159,7 +159,10 @@ def di_Z(G):
         for w in combinations(H.vertices(),i):
             indicator = is_di_zero_forcing(H,w)
             if indicator > -1:
-                return i,w
+                z = []
+                z.append(i)
+                z.append(w)
+                return z
         i+=1
 
 
