@@ -133,7 +133,6 @@ def is_di_zero_forcing(G,s):
 
 
 
-
 def di_Z(G):
     """
         Given a directed graph this function will find the size
@@ -186,7 +185,7 @@ def di_zero_forcing_sets_min(G):
     #This generates the directed zero forcing number of G
     H = G.copy()
     H.relabel()
-    z = di_Z(H)[0]
+    z = di_Z(H)
     sets = []
     #Uncomment the next line in if you would like to see what the
     #relabelled graph looks like
