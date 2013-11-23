@@ -128,3 +128,27 @@ def orientations(G):
             orientations.append(D)
             
     return orientations
+
+def di_orient_pt_int(G):
+    """
+        This function will produce the a list of the
+        minimum directed propagation times for each
+        orientation of G.
+        
+        Input:
+        A simple graph G.
+        
+        Output:
+        A list of minimum directed propagation times for
+        orientations of G.
+        
+        EXAMPLE:
+        sage: G = Graph({0:[1],1:[2],2:[3,4]})
+        sage: di_orient_pt_int(G)
+        [1,2,3]
+        
+        """
+    interval = []
+    for o in orientations(G):
+        interval.append(di_min_prop_time_int(o)[0])
+    return uniq(interval)

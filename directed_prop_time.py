@@ -1,7 +1,7 @@
 #    Written Nathan Warnberg as part of the 2013 Iowa State University Research Experience
 #    for Undergraduates Combinatorial Matrix Theory research group.
 #
-#    Updated by Nathan Warnberg on October 25, 2013.
+#    Updated by Nathan Warnberg on November 23, 2013.
 #    Copyright (c) 2013 Iowa State University. All rights reserved.
 #
 #    This code is distributed under the GNU Public License (GPL), version 2 or (at your option)
@@ -54,7 +54,6 @@ def out_and_in_neighborhoods(G):
     return out_list,in_list
 
 
-
 def is_di_zero_forcing(G,s):
     """
         This function takes a graph G and a subset of vertices s
@@ -83,6 +82,8 @@ def is_di_zero_forcing(G,s):
         """
     #note re-labelling might change whether or not s is a zero forcing set
     H = G.copy()
+    H.relabel()
+    #H.show()
     blue=[]
     counter = -1
     k = 0
@@ -111,26 +112,25 @@ def is_di_zero_forcing(G,s):
         counter +=1
         temp = []
         for b in blue:
-            if len(out_neighborhoods[b][1]) ==1:
+            if len(out_neighborhoods[b][1]) == 1:
                 v_temp = out_neighborhoods[b][1][0]
                 temp.append(v_temp)
-                #removing the vertex from all out neighborhoods
-                #print out_neighborhoods
-                for x in in_neighborhoods[v_temp][1]:
-                    out_neighborhoods[x][1].remove(v_temp)
-        #print out_neighborhoods
-    
-    
+        
+        #removing the new blue vertices from all out neighborhoods
+        for v in uniq(temp):
+            for x in in_neighborhoods[v][1]:
+                out_neighborhoods[x][1].remove(v)
+
+
         #updating our blue vertex set
-        i = 0
-        while i < len(temp):
-            blue.append(temp[i])
-            i+=1
-    
+        for i in uniq(temp):
+            blue.append(i)
+
     if len(blue) == len(H.vertices()):
         return counter
     else:
         return -1
+
 
 
 
@@ -154,12 +154,14 @@ def di_Z(G):
         """
     H = G.copy()
     H.relabel()
+    if len(H.edges()) == 0:
+        return [0,H.vertices()]
     i = 1
     while i <=len(H.vertices()):
         for w in combinations(H.vertices(),i):
             indicator = is_di_zero_forcing(H,w)
             if indicator > -1:
-                return i,w
+                return [i,w]
         i+=1
 
 
