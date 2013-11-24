@@ -1,3 +1,9 @@
+#    Updated by Nathan Warnberg on November 23, 2013.
+#    Copyright (c) 2013 Iowa State University. All rights reserved.
+#
+#    This code is distributed under the GNU Public License (GPL), version 2 or (at your option)
+#    any later version. See http://www.gnu.org/licenses/gpl-2.0.html for details
+
 def is_in_list(G,list):
     """
     This function tells whether a given graph
