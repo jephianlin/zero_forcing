@@ -9,8 +9,6 @@
 
 
 
-
-
 def out_and_in_neighborhoods(G):
     """
         Given a directed graph we need functions that return
@@ -52,8 +50,8 @@ def out_and_in_neighborhoods(G):
         in_list.append([v,temp_in])
     
     return out_list,in_list
-
-
+    
+    
 def is_di_zero_forcing(G,s):
     """
         This function takes a graph G and a subset of vertices s
@@ -115,21 +113,22 @@ def is_di_zero_forcing(G,s):
             if len(out_neighborhoods[b][1]) == 1:
                 v_temp = out_neighborhoods[b][1][0]
                 temp.append(v_temp)
-        
-        #removing the new blue vertices from all out neighborhoods
-        for v in uniq(temp):
+                
+        #removing the new blue vertices from all out neighborhoods      
+        for v in uniq(temp):       
             for x in in_neighborhoods[v][1]:
                 out_neighborhoods[x][1].remove(v)
-
-
+    
+    
         #updating our blue vertex set
         for i in uniq(temp):
             blue.append(i)
-
+    
     if len(blue) == len(H.vertices()):
         return counter
     else:
         return -1
+        
 
 
 
@@ -154,7 +153,7 @@ def di_Z(G):
     H = G.copy()
     H.relabel()
     if len(H.edges()) == 0:
-        return [0,H.vertices()]
+        return [len(H.vertices()),H.vertices()]
     i = 1
     while i <=len(H.vertices()):
         for w in combinations(H.vertices(),i):
@@ -185,7 +184,7 @@ def di_zero_forcing_sets_min(G):
     #This generates the directed zero forcing number of G
     H = G.copy()
     H.relabel()
-    z = di_Z(H)
+    z = di_Z(H)[0]
     sets = []
     #Uncomment the next line in if you would like to see what the
     #relabelled graph looks like
