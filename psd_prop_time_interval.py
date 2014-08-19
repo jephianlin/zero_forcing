@@ -8,9 +8,9 @@
 
 #This will load Steve Butler and Jason Grout minimum rank software
 URL='http://github.com/jasongrout/minimum_rank/raw/minimum_rank_1_1_3/'
-   files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
-   for f in files:
-       load(URL+f)
+files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
+for f in files:
+   load(URL+f)
     
     
 
