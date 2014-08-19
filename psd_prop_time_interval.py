@@ -7,7 +7,7 @@
 #    any later version. See http://www.gnu.org/licenses/gpl-2.0.html for details
 
 #This will load Steve Butler and Jason Grout minimum rank software
-URL='http://github.com/jasongrout/minimum_rank/raw/minimum_rank_1_1_2/'
+URL='http://github.com/jasongrout/minimum_rank/raw/minimum_rank_1_1_3/'
 files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py']
 for f in files:
     load(URL+f)    
