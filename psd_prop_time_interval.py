@@ -7,12 +7,14 @@
 #    any later version. See http://www.gnu.org/licenses/gpl-2.0.html for details
 
 #This will load Steve Butler and Jason Grout minimum rank software
-URL='https://raw.githubusercontent.com/jephianlin/mr_JG/master/'
-# URL='http://github.com/jasongrout/minimum_rank/raw/minimum_rank_1_1_3/'
-files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
-for f in files:
-   load(URL+f)
-    
+# URL='https://raw.githubusercontent.com/jephianlin/mr_JG/master/'
+# files=['Zq_c.pyx','Zq.py','zero_forcing_64.pyx','zero_forcing_wavefront.pyx','minrank.py', 'inertia.py']
+# for f in files:
+#    load(URL+f)
+
+# Use the updated version of mr_JG
+load("https://raw.githubusercontent.com/jephianlin/minrank_aux/master/load_all.py")
+load_all(minrank_aux=False)    
     
 
 
